@@ -18,12 +18,6 @@ class Progress extends Model
         'completion_percentage' => 'float',
     ];
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONSHIPS
-    |--------------------------------------------------------------------------
-    */
-
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -33,12 +27,6 @@ class Progress extends Model
     {
         return $this->belongsTo(StudyPlanner::class, 'planner_id');
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESSOR
-    |--------------------------------------------------------------------------
-    */
 
     public function getStatusAttribute()
     {
