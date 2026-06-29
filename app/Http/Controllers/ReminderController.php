@@ -138,7 +138,7 @@ class ReminderController extends Controller
                 ],
                 [
                     'judul' => 'Ujian Basis Data',
-                    'tanggal' => '2026-06-22'
+                    'tanggal' => '2526-06-22'
                 ]
             ]
         ]);
@@ -158,5 +158,15 @@ class ReminderController extends Controller
                 'completed_at' => now()
             ]
         ]);
+    }
+
+    public function index(Request $request)
+    {
+        return $this->getRemindersByUser($request->user()->id ?? 1);
+    }
+
+    public function store(Request $request)
+    {
+        return $this->createReminder($request);
     }
 }

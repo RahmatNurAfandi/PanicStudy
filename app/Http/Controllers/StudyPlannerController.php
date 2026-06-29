@@ -171,4 +171,14 @@ class StudyPlannerController extends Controller
             ]
         ]);
     }
+
+    public function index(Request $request)
+    {
+        return $this->getPlansByUser($request->user()->id ?? 1);
+    }
+
+    public function store(Request $request)
+    {
+        return $this->createPlan($request);
+    }
 }

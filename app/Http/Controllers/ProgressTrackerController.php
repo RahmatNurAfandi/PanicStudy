@@ -157,4 +157,9 @@ class ProgressTrackerController extends Controller
             ]
         ]);
     }
-}
+
+    public function index(Request $request)
+    {
+        return $this->getProgress($request->user()->id ?? 1);
+    }
+} 
